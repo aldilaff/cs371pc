@@ -67,4 +67,12 @@ Running main() from gtest_main.cc
 [----------] Global test environment tear-down
 [==========] 9 tests from 1 test case ran. (1 ms total)
 [  PASSED  ] 9 tests.
+
+% gcov -b ./IsPrime2.c++ | grep -A 5 "File 'IsPrime2.c++'"
+File 'IsPrime2.c++'
+Lines executed:100.00% of 18
+Branches executed:52.94% of 153
+Taken at least once:23.53% of 153
+No calls
+IsPrime2.c++:creating 'IsPrime2.c++.gcov'
 */
