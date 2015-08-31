@@ -9,7 +9,17 @@
 
 #include "gtest/gtest.h"
 
-#include "Collatz2.h"
+int cycle_length (int n) {
+    assert(n > 0);
+    int c = 1;
+    while (n > 1) {
+        if ((n % 2) == 0)
+            n = (n / 2);
+        else
+            n = (3 * n) + 1;
+        ++c;}
+    assert(c > 0);
+    return c;}
 
 TEST(CoverageFixture, test) {
     ASSERT_EQ(cycle_length(1), 1);}
@@ -34,7 +44,7 @@ Running main() from gtest_main.cc
 
 
 
-% gcov -version
+% gcov --version
 gcov (Ubuntu 4.8.4-2ubuntu1~14.04) 4.8.4
 Copyright (C) 2013 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.
