@@ -32,6 +32,30 @@ TEST(MyUnitTests, test_3) {
     ASSERT_EQ(cycle_length(10), 7);}
 
 /*
+% ls -al /usr/include/gtest/
+...
+gtest.h
+...
+
+
+
+% locate libgtest.a
+/usr/lib/libgtest.a
+
+
+
+% locate libpthread.a
+...
+/usr/lib32/libpthread.a
+...
+
+
+
+% locate libgtest_main.a
+/usr/lib/libgtest_main.a
+
+
+
 % g++ -pedantic -std=c++11 -Wall UnitTests1.c++ -o UnitTests1 -lgtest -lgtest_main -pthread
 
 

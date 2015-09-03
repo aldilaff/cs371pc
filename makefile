@@ -37,6 +37,10 @@ pull:
     --include "IsPrime2.c++"                \
     --exclude "*"                           \
     ../../../exercises/c++/ exercises
+	@rsync -r -t -u -v --delete             \
+    --include "Quiz2.c++"                   \
+    --exclude "*"                           \
+    ../../quizzes/ quizzes
 
 #    --include "Exceptions.c++"              \
 #    --include "Exceptions2.c++"             \
@@ -52,7 +56,7 @@ pull:
 #    --include "Consts.c++"                  \
 #    --include "Sets.c++"                    \
 #    --include "Maps.c++"                    \
-#	@rsync -r -t -u -v --delete             \
+
 #    --include "IsPrime1.h"                  \
 #    --include "IsPrime1.c++"                \
 #    --include "IsPrime2.h"                  \
@@ -89,7 +93,7 @@ pull:
 #    --include "OStreamIterator.c++"         \
 #    --include "IStreamIterator.c++"         \
 #    --include "ReverseIterator.c++"         \
-#	@rsync -r -t -u -v --delete             \
+
 #    --include "Quiz3.c++"                   \
 #    --include "Quiz5.c++"                   \
 #    --include "Quiz6.c++"                   \
@@ -97,8 +101,6 @@ pull:
 #    --include "Quiz8.c++"                   \
 #    --include "Quiz9.c++"                   \
 #    --include "Quiz11.c++"                  \
-#    --exclude "*"                           \
-#    ../../quizzes/ quizzes
 
 push:
 	make clean
@@ -120,22 +122,22 @@ status:
 	git status
 
 testx:
-	cd examples; ls -al; ls -al; make testx
+	cd examples;  make testx
 	@echo
-	cd exercises; ls -al; ls -al; make testx
+	cd exercises; make testx
 	@echo
-	cd quizzes; ls -al; ls -al; make testx
+	cd quizzes; make testx
 
 testy:
-	cd examples; ls -al; ls -al; make testy
+	cd examples; make testy
 	@echo
-	cd exercises; ls -al; ls -al; make testy
+	cd exercises; make testy
 	@echo
-	cd quizzes; ls -al; ls -al; make testy
+	cd quizzes; make testy
 
 testz:
-	cd examples; ls -al; ls -al; make testz
+	cd examples; make testz
 	@echo
-	cd exercises; ls -al; ls -al; make testz
+	cd exercises; make testz
 	@echo
-	cd quizzes; ls -al; ls -al; make testz
+	cd quizzes; make testz
