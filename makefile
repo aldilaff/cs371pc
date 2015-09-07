@@ -2,8 +2,6 @@ clean:
 	cd examples; make clean
 	@echo
 	cd exercises; make clean
-	@echo
-	cd quizzes; make clean
 
 config:
 	git config -l
@@ -40,10 +38,6 @@ pull:
     --include "IsPrime2.c++"                \
     --exclude "*"                           \
     ../../../exercises/c++/ exercises
-	@rsync -r -t -u -v --delete             \
-    --include "Quiz2.c++"                   \
-    --exclude "*"                           \
-    ../../quizzes/ quizzes
 
 #    --include "Types.c++"                   \
 #    --include "Operators.c++"               \
@@ -109,7 +103,6 @@ push:
 	git add examples
 	git add exercises
 	git add makefile
-	git add quizzes
 	git commit -m "another commit"
 	git push
 	git status
@@ -125,19 +118,13 @@ testx:
 	cd examples;  make testx
 	@echo
 	cd exercises; make testx
-	@echo
-	cd quizzes; make testx
 
 testy:
 	cd examples; make testy
 	@echo
 	cd exercises; make testy
-	@echo
-	cd quizzes; make testy
 
 testz:
 	cd examples; make testz
 	@echo
 	cd exercises; make testz
-	@echo
-	cd quizzes; make testz
