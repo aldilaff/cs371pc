@@ -7,8 +7,8 @@ FILES :=              \
     Exceptions        \
     Exceptions2       \
     Exceptions3       \
+    Types
 
-#    Types             \
 #    Functions         \
 #    AbstractClasses   \
 #    Handle1           \

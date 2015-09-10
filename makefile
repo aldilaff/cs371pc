@@ -29,6 +29,7 @@ pull:
     --include "Exceptions.c++"              \
     --include "Exceptions2.c++"             \
     --include "Exceptions3.c++"             \
+    --include "Types.c++"                   \
     --exclude "*"                           \
     ../../../examples/c++/ examples
 	@rsync -r -t -u -v --delete             \
@@ -36,6 +37,8 @@ pull:
     --include "IsPrime1.c++"                \
     --include "IsPrime2.h"                  \
     --include "IsPrime2.c++"                \
+    --include "StrCmp.h"                    \
+    --include "StrCmp.c++"                  \
     --exclude "*"                           \
     ../../../exercises/c++/ exercises
 
