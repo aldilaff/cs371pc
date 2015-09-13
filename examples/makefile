@@ -7,15 +7,8 @@ FILES :=              \
     Exceptions        \
     Exceptions2       \
     Exceptions3       \
-    Types
-
-#    Functions         \
-#    AbstractClasses   \
-#    Handle1           \
-#    Handle2           \
-#    Handle3           \
-#    MethodOverriding1 \
-#    MethodOverriding2
+    Variables         \
+    Arguments
 
 CXX        := g++-4.8
 CXXFLAGS   := -pedantic -std=c++11 -Wall
