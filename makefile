@@ -34,10 +34,12 @@ pull:
     --exclude "*"                           \
     ../../../examples/c++/ examples
 	@rsync -r -t -u -v --delete             \
-    --include "IsPrime1.h"                  \
     --include "IsPrime1.c++"                \
-    --include "IsPrime2.h"                  \
+    --include "IsPrime1.h"                  \
     --include "IsPrime2.c++"                \
+    --include "IsPrime2.h"                  \
+    --include "Incr.c++"                    \
+    --include "Incr.h"                      \
     --exclude "*"                           \
     ../../../exercises/c++/ exercises
 
@@ -52,10 +54,6 @@ pull:
 #    --include "Sets.c++"                    \
 #    --include "Maps.c++"                    \
 
-#    --include "IsPrime1.h"                  \
-#    --include "IsPrime1.c++"                \
-#    --include "IsPrime2.h"                  \
-#    --include "IsPrime2.c++"                \
 #    --include "StrCmp.h"                    \
 #    --include "StrCmp.c++"                  \
 #    --include "Factorial.h"                 \
