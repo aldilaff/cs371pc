@@ -31,6 +31,7 @@ pull:
     --include "Exceptions3.c++"             \
     --include "Variables.c++"               \
     --include "Arguments.c++"               \
+    --include "Returns.c++"                 \
     --exclude "*"                           \
     ../../../examples/c++/ examples
 	@rsync -r -t -u -v --delete             \
