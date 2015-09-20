@@ -43,6 +43,10 @@ pull:
     --include "Incr.h"                      \
     --include "Equal.c++"                   \
     --include "Equal.h"                     \
+    --include "Fill.c++"                    \
+    --include "Fill.h"                      \
+    --include "Copy.c++"                    \
+    --include "Copy.h"                      \
     --exclude "*"                           \
     ../../../exercises/c++/ exercises
 
@@ -61,12 +65,6 @@ pull:
 #    --include "StrCmp.c++"                  \
 #    --include "Factorial.h"                 \
 #    --include "Factorial.c++"               \
-#    --include "Equal.h"                     \
-#    --include "Equal.c++"                   \
-#    --include "Fill.h"                      \
-#    --include "Fill.c++"                    \
-#    --include "Copy.h"                      \
-#    --include "Copy.c++"                    \
 #    --include "Stack.h"                     \
 #    --include "Stack.c++"                   \
 #    --include "Vector1.h"                   \
