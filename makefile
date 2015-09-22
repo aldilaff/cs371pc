@@ -47,54 +47,12 @@ pull:
     --include "Fill.h"                      \
     --include "Copy.c++"                    \
     --include "Copy.h"                      \
+    --include "RangeIterator.c++"           \
+    --include "RangeIterator.h"             \
+    --include "Range.c++"                   \
+    --include "Range.h"                     \
     --exclude "*"                           \
     ../../../exercises/c++/ exercises
-
-#    --include "Types.c++"                   \
-#    --include "Operators.c++"               \
-#    --include "StackVsHeap.c++"             \
-#    --include "Selection.c++"               \
-#    --include "Iteration.c++"               \
-#    --include "Lambdas.c++"                 \
-#    --include "Iterators.c++"               \
-#    --include "Consts.c++"                  \
-#    --include "Sets.c++"                    \
-#    --include "Maps.c++"                    \
-
-#    --include "StrCmp.h"                    \
-#    --include "StrCmp.c++"                  \
-#    --include "Factorial.h"                 \
-#    --include "Factorial.c++"               \
-#    --include "Stack.h"                     \
-#    --include "Stack.c++"                   \
-#    --include "Vector1.h"                   \
-#    --include "Vector1.c++"                 \
-#    --include "Vector2.h"                   \
-#    --include "Vector2.c++"                 \
-#    --include "Memory.h"                    \
-#    --include "Vector3.h"                   \
-#    --include "Vector3.c++"                 \
-#    --include "Vector4.h"                   \
-#    --include "Vector4.c++"                 \
-#    --include "Reverse.h"                   \
-#    --include "Reverse.c++"                 \
-#    --include "Count.h"                     \
-#    --include "Count.c++"                   \
-#    --include "Pair.h"                      \
-#    --include "Pair.c++"                    \
-#    --include "BackInserter.h"              \
-#    --include "BackInserter.c++"            \
-#    --include "OStreamIterator.c++"         \
-#    --include "IStreamIterator.c++"         \
-#    --include "ReverseIterator.c++"         \
-
-#    --include "Quiz3.c++"                   \
-#    --include "Quiz5.c++"                   \
-#    --include "Quiz6.c++"                   \
-#    --include "Quiz7.c++"                   \
-#    --include "Quiz8.c++"                   \
-#    --include "Quiz9.c++"                   \
-#    --include "Quiz11.c++"                  \
 
 push:
 	make clean
