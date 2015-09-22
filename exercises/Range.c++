@@ -2,11 +2,9 @@
 // Range.c++
 // ---------
 
-#include <algorithm> // copy
+#include <algorithm> // equal
 #include <cassert>   // assert
 #include <iostream>  // cout, endl
-#include <iterator>  // ostream
-#include <sstream>   // ostringstream
 
 #include "gtest/gtest.h"
 
@@ -43,11 +41,10 @@ TEST(Range_Fixture, test_3) {
 
 TEST(Range_Fixture, test_4) {
     Range<int> x(2, 5);
-    Range<int>::iterator b = x.begin();
-    Range<int>::iterator e = x.end();
-    ostringstream out;
-    copy(b, e, ostream_iterator<int>(out));
-    ASSERT_EQ("234", out.str());}
+    Range<int>::iterator b  = x.begin();
+    Range<int>::iterator e  = x.end();
+    int                 a[] = {2, 3, 4};
+    ASSERT_TRUE(equal(b, e, a));}
 
 /*
 % g++ -pedantic -std=c++11 -Wall Range.c++ -o Range -lgtest_main

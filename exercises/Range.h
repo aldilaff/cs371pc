@@ -5,6 +5,11 @@
 #ifndef Range_h
 #define Range_h
 
+#include <cstddef>  // ptrdiff_t
+#include <iterator> // input_iterator_tag
+
+using namespace std;
+
 template <typename T>
 class Range {
     private:
@@ -13,6 +18,13 @@ class Range {
 
     public:
         class iterator {
+            public:
+                typedef input_iterator_tag iterator_category;
+                typedef T                  value_type;
+                typedef ptrdiff_t          difference_type;
+                typedef T*                 pointer;
+                typedef T&                 reference;
+
             private:
                 T _v;
 

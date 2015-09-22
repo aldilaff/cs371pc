@@ -2,9 +2,7 @@
 // RangeIterator.c++
 // -----------------
 
-#include <algorithm> // copy
-#include <iterator>  // ostream_iterator
-#include <sstream>   // ostringstream
+#include <algorithm> // equal
 
 #include "gtest/gtest.h"
 
@@ -37,11 +35,10 @@ TEST(Range_Iterator_Fixture, test_3) {
     ASSERT_EQ(b, e);}
 
 TEST(Range_Iterator_Fixture, test_4) {
-    Range_Iterator<int> b = 2;
-    Range_Iterator<int> e = 5;
-    ostringstream out;
-    copy(b, e, ostream_iterator<int>(out));
-    ASSERT_EQ("234", out.str());}
+    Range_Iterator<int> b   = 2;
+    Range_Iterator<int> e   = 5;
+    int                 a[] = {2, 3, 4};
+    ASSERT_TRUE(equal(b, e, a));}
 
 /*
 % g++ -pedantic -std=c++11 -Wall RangeIterator.c++ -o RangeIterator -lgtest_main
