@@ -43,10 +43,12 @@ pull:
     --include "Incr.h"                      \
     --include "Equal.c++"                   \
     --include "Equal.h"                     \
-    --include "Fill.c++"                    \
-    --include "Fill.h"                      \
     --include "Copy.c++"                    \
     --include "Copy.h"                      \
+    --include "Fill.c++"                    \
+    --include "Fill.h"                      \
+    --include "AllOf.c++"                   \
+    --include "AllOf.h"                     \
     --include "RangeIterator.c++"           \
     --include "RangeIterator.h"             \
     --include "Range.c++"                   \

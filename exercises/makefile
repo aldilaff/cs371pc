@@ -3,8 +3,9 @@ FILES :=          \
     IsPrime2      \
     Incr          \
     Equal         \
-    Fill          \
     Copy          \
+    Fill          \
+    AllOf         \
     RangeIterator \
     Range
 
