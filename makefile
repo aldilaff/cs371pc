@@ -32,6 +32,7 @@ pull:
     --include "Variables.c++"               \
     --include "Arguments.c++"               \
     --include "Returns.c++"                 \
+    --include "Lambdas.c++"                 \
     --exclude "*"                           \
     ../../../examples/c++/ examples
 	@rsync -r -t -u -v --delete             \
