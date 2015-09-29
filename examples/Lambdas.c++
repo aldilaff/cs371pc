@@ -83,10 +83,10 @@ int main () {
     assert(                                       g(2, 3) == 5);
     assert(                                       h(2, 3) == 5);
 
-    assert(accumulate(x.begin(), x.end(), 0, add_function) == 9);
-    assert(accumulate(x.begin(), x.end(), 0, f)            == 9);
-    assert(accumulate(x.begin(), x.end(), 0, g)            == 9);
-    assert(accumulate(x.begin(), x.end(), 0, h)            == 9);
+    assert(accumulate(x.begin(), x.end(), 0, [] (int i, int j) -> int {return i + j;}) == 9);
+    assert(accumulate(x.begin(), x.end(), 0, f)                                        == 9);
+    assert(accumulate(x.begin(), x.end(), 0, g)                                        == 9);
+    assert(accumulate(x.begin(), x.end(), 0, h)                                        == 9);
     }
 
 
