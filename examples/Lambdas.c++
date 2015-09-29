@@ -51,9 +51,9 @@ UF2 add_closure_4 (int& i) {
 int main () {
     cout << "Lambdas.c++" << endl;
 
-    const int a[] = {2, 3, 4};
-
     {
+    const list<int> x = {2, 3, 4};
+
     BF1  f = add_function;
     BF2  g = add_function;
     auto h = add_function;
@@ -63,15 +63,17 @@ int main () {
     assert(           g(2, 3) == 5);
     assert(           h(2, 3) == 5);
 
-    assert(accumulate(a, a + 3, 0, add_function) == 9);
-    assert(accumulate(a, a + 3, 0, f)            == 9);
-    assert(accumulate(a, a + 3, 0, g)            == 9);
-    assert(accumulate(a, a + 3, 0, h)            == 9);
+    assert(accumulate(x.begin(), x.end(), 0, add_function) == 9);
+    assert(accumulate(x.begin(), x.end(), 0, f)            == 9);
+    assert(accumulate(x.begin(), x.end(), 0, g)            == 9);
+    assert(accumulate(x.begin(), x.end(), 0, h)            == 9);
     }
 
 
 
     {
+    const list<int> x = {2, 3, 4};
+
     BF1  f = [] (int i, int j) -> int {return i + j;};
     BF2  g = [] (int i, int j) -> int {return i + j;};
     auto h = [] (int i, int j) -> int {return i + j;};
@@ -81,15 +83,17 @@ int main () {
     assert(                                       g(2, 3) == 5);
     assert(                                       h(2, 3) == 5);
 
-    assert(accumulate(a, a + 3, 0, add_function) == 9);
-    assert(accumulate(a, a + 3, 0, f)            == 9);
-    assert(accumulate(a, a + 3, 0, g)            == 9);
-    assert(accumulate(a, a + 3, 0, h)            == 9);
+    assert(accumulate(x.begin(), x.end(), 0, add_function) == 9);
+    assert(accumulate(x.begin(), x.end(), 0, f)            == 9);
+    assert(accumulate(x.begin(), x.end(), 0, g)            == 9);
+    assert(accumulate(x.begin(), x.end(), 0, h)            == 9);
     }
 
 
 
     {
+    const list<int> x = {2, 3, 4};
+
     BF1  f = add_lambda_1();
     BF2  g = add_lambda_1();
     auto h = add_lambda_1();
@@ -99,15 +103,17 @@ int main () {
     assert(             g(2, 3) == 5);
     assert(             h(2, 3) == 5);
 
-    assert(accumulate(a, a + 3, 0, add_lambda_1()) == 9);
-    assert(accumulate(a, a + 3, 0, f)              == 9);
-    assert(accumulate(a, a + 3, 0, g)              == 9);
-    assert(accumulate(a, a + 3, 0, h)              == 9);
+    assert(accumulate(x.begin(), x.end(), 0, add_lambda_1()) == 9);
+    assert(accumulate(x.begin(), x.end(), 0, f)              == 9);
+    assert(accumulate(x.begin(), x.end(), 0, g)              == 9);
+    assert(accumulate(x.begin(), x.end(), 0, h)              == 9);
     }
 
 
 
     {
+    const list<int> x = {2, 3, 4};
+
 //  BF1  f = add_lambda_2(); // error: no viable conversion from 'BF2' (aka 'function<int (int, int)>') to 'BF1' (aka 'int (*)(int, int)')
     BF2  g = add_lambda_2();
     auto h = add_lambda_2();
@@ -116,15 +122,16 @@ int main () {
     assert(             g(2, 3) == 5);
     assert(             h(2, 3) == 5);
 
-    assert(accumulate(a, a + 3, 0, add_lambda_2()) == 9);
-    assert(accumulate(a, a + 3, 0, g)              == 9);
-    assert(accumulate(a, a + 3, 0, h)              == 9);
+    assert(accumulate(x.begin(), x.end(), 0, add_lambda_2()) == 9);
+    assert(accumulate(x.begin(), x.end(), 0, g)              == 9);
+    assert(accumulate(x.begin(), x.end(), 0, h)              == 9);
     }
 
 
 
     {
     const int i = 2;
+
 //  UF1  f = [i] (int j) -> int {return i + j;}; // error: no viable conversion from '(lambda at Lambdas.c++:109:14)' to 'UF1' (aka 'int (*)(int)')
     UF2  g = [i] (int j) -> int {return i + j;};
     auto h = [i] (int j) -> int {return i + j;};
@@ -160,6 +167,7 @@ int main () {
 
     {
     const int i = 2;
+
 //  UF1  f = add_closure_2(i); //  error: no viable conversion from 'UF2' (aka 'function<int (int)>') to 'UF1' (aka 'int (*)(int)')
     UF2  g = add_closure_2(i);
     auto h = add_closure_2(i);
@@ -195,6 +203,7 @@ int main () {
 
     {
     int i = 2;
+
 //  UF1  f = [&i] (int j) -> int {return i++ + j;}; // error: no viable conversion from '(lambda at Lambdas.c++:109:14)' to 'UF1' (aka 'int (*)(int)')
     UF2  g = [&i] (int j) -> int {return i++ + j;};
     auto h = [&i] (int j) -> int {return i++ + j;};
@@ -230,6 +239,7 @@ int main () {
 
     {
     int i = 2;
+
 //  UF1  f = add_closure_4(i); //  error: no viable conversion from 'UF2' (aka 'function<int (int)>') to 'UF1' (aka 'int (*)(int)')
     UF2  g = add_closure_4(i);
     auto h = add_closure_4(i);
