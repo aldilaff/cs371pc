@@ -3,6 +3,7 @@
 // -----------------
 
 #include <algorithm> // equal
+#include <list>      // list
 
 #include "gtest/gtest.h"
 
@@ -37,8 +38,8 @@ TEST(Range_Iterator_Fixture, test_3) {
 TEST(Range_Iterator_Fixture, test_4) {
     Range_Iterator<int> b   = 2;
     Range_Iterator<int> e   = 5;
-    int                 a[] = {2, 3, 4};
-    ASSERT_TRUE(equal(b, e, a));}
+    list<int>           x   = {2, 3, 4};
+    ASSERT_TRUE(equal(b, e, x.begin()));}
 
 /*
 % g++ -pedantic -std=c++11 -Wall RangeIterator.c++ -o RangeIterator -lgtest_main
