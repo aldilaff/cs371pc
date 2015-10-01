@@ -15,18 +15,30 @@ using namespace std;
 
 TEST(Range_Fixture, test_1) {
     Range<int> x(2, 2);
-    list<int>  y;
-    ASSERT_TRUE(equal(x.begin(), x.end(), y.begin()));}
+    Range<int>::iterator b = x.begin();
+    Range<int>::iterator e = x.end();
+    ASSERT_EQ(b, e);}
 
 TEST(Range_Fixture, test_2) {
     Range<int> x(2, 3);
-    list<int>  y = {2};
-    ASSERT_TRUE(equal(x.begin(), x.end(), y.begin()));}
+    Range<int>::iterator b = x.begin();
+    Range<int>::iterator e = x.end();
+    ASSERT_NE(b, e);
+    ASSERT_EQ(2, *b);
+    ++b;
+    ASSERT_EQ(b, e);}
 
 TEST(Range_Fixture, test_3) {
     Range<int> x(2, 4);
-    list<int>  y = {2, 3};
-    ASSERT_TRUE(equal(x.begin(), x.end(), y.begin()));}
+    Range<int>::iterator b = x.begin();
+    Range<int>::iterator e = x.end();
+    ASSERT_NE(b, e);
+    ASSERT_EQ(2, *b);
+    ++b;
+    ASSERT_NE(b, e);
+    ASSERT_EQ(3, *b);
+    b++;
+    ASSERT_EQ(b, e);}
 
 TEST(Range_Fixture, test_4) {
     Range<int> x(2, 5);
