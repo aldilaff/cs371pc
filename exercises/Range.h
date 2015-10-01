@@ -29,7 +29,7 @@ class Range {
                 T _v;
 
             public:
-                iterator(const T& v) :
+                iterator (const T& v) :
                         _v (v)
                     {}
 
