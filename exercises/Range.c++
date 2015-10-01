@@ -5,6 +5,7 @@
 #include <algorithm> // equal
 #include <cassert>   // assert
 #include <iostream>  // cout, endl
+#include <list>      // list
 
 #include "gtest/gtest.h"
 
@@ -14,37 +15,23 @@ using namespace std;
 
 TEST(Range_Fixture, test_1) {
     Range<int> x(2, 2);
-    Range<int>::iterator b = x.begin();
-    Range<int>::iterator e = x.end();
-    ASSERT_EQ(b, e);}
+    list<int>  y;
+    ASSERT_TRUE(equal(x.begin(), x.end(), y.begin()));}
 
 TEST(Range_Fixture, test_2) {
     Range<int> x(2, 3);
-    Range<int>::iterator b = x.begin();
-    Range<int>::iterator e = x.end();
-    ASSERT_NE(b, e);
-    ASSERT_EQ(2, *b);
-    ++b;
-    ASSERT_EQ(b, e);}
+    list<int>  y = {2};
+    ASSERT_TRUE(equal(x.begin(), x.end(), y.begin()));}
 
 TEST(Range_Fixture, test_3) {
     Range<int> x(2, 4);
-    Range<int>::iterator b = x.begin();
-    Range<int>::iterator e = x.end();
-    ASSERT_NE(b, e);
-    ASSERT_EQ(2, *b);
-    ++b;
-    ASSERT_NE(b, e);
-    ASSERT_EQ(3, *b);
-    b++;
-    ASSERT_EQ(b, e);}
+    list<int>  y = {2, 3};
+    ASSERT_TRUE(equal(x.begin(), x.end(), y.begin()));}
 
 TEST(Range_Fixture, test_4) {
     Range<int> x(2, 5);
-    Range<int>::iterator b  = x.begin();
-    Range<int>::iterator e  = x.end();
-    int                 a[] = {2, 3, 4};
-    ASSERT_TRUE(equal(b, e, a));}
+    list<int>  y = {2, 3, 4};
+    ASSERT_TRUE(equal(x.begin(), x.end(), y.begin()));}
 
 /*
 % g++ -pedantic -std=c++11 -Wall Range.c++ -o Range -lgtest_main
