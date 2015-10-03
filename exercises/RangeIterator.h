@@ -33,7 +33,7 @@ class Range_Iterator {
         bool operator != (const Range_Iterator& rhs) const {
             return !(*this == rhs);}
 
-        T operator * () const {
+        const T& operator * () const {
             return _v;}
 
         Range_Iterator& operator ++ () {
