@@ -46,7 +46,7 @@ class Range {
                     ++_v;
                     return *this;}
 
-                const iterator operator ++ (int) {
+                iterator operator ++ (int) {
                     iterator x = *this;
                     ++*this;
                     return x;}};
@@ -56,10 +56,10 @@ class Range {
                 _e (e)
             {}
 
-        const iterator begin () const {
+        iterator begin () const {
             return iterator(_b);}
 
-        const iterator end () const {
+        iterator end () const {
             return iterator(_e);}};
 
 #endif // Range_h

@@ -40,7 +40,7 @@ class Range_Iterator {
             ++_v;
             return *this;}
 
-        const Range_Iterator operator ++ (int) {
+        Range_Iterator operator ++ (int) {
             Range_Iterator x = *this;
             ++*this;
             return x;}};
