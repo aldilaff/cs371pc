@@ -33,6 +33,8 @@ pull:
     --include "Arguments.c++"               \
     --include "Returns.c++"                 \
     --include "Lambdas.c++"                 \
+    --include "Iterators.c++"               \
+    --include "Consts.c++"                  \
     --exclude "*"                           \
     ../../../examples/c++/ examples
 	@rsync -r -t -u -v --delete             \
