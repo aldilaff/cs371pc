@@ -11,14 +11,15 @@
 using namespace std;
 
 template <typename T>
-class Range_Iterator {
+class Range_Iterator : public iterator<input_iterator_tag, T> {
+/*
     public:
         using iterator_category = input_iterator_tag;
         using value_type        = T;
         using difference_type   = ptrdiff_t;
         using pointer           = T*;
         using reference         = T&;
-
+*/
     private:
         T _v;
 

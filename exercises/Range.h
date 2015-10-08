@@ -17,14 +17,15 @@ class Range {
         T _e;
 
     public:
-        class iterator {
+        class iterator : public std::iterator<input_iterator_tag, T> {
+/*
             public:
                 using iterator_category = input_iterator_tag;
                 using value_type        = T;
                 using difference_type   = ptrdiff_t;
                 using pointer           = T*;
                 using reference         = T&;
-
+*/
             private:
                 T _v;
 
@@ -39,7 +40,7 @@ class Range {
                 bool operator != (const iterator& rhs) const {
                     return !(*this == rhs);}
 
-                const T& operator * () {
+                const T& operator * () const {
                     return _v;}
 
                 iterator& operator ++ () {

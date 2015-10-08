@@ -12,8 +12,8 @@
 using namespace std;
 
 TEST(Range_Iterator_Fixture, test_1) {
-    Range_Iterator<int> b = 2;
-    Range_Iterator<int> e = 2;
+    const Range_Iterator<int> b = 2;
+    const Range_Iterator<int> e = 2;
     ASSERT_EQ(b, e);}
 
 TEST(Range_Iterator_Fixture, test_2) {
@@ -21,7 +21,8 @@ TEST(Range_Iterator_Fixture, test_2) {
     Range_Iterator<int> e = 3;
     ASSERT_NE(b, e);
     ASSERT_EQ(2, *b);
-    ++b;
+    Range_Iterator<int>& x = ++b;
+    ASSERT_EQ(&x, &b);
     ASSERT_EQ(b, e);}
 
 TEST(Range_Iterator_Fixture, test_3) {
